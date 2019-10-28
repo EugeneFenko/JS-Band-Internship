@@ -1,0 +1,28 @@
+$border: #333;
+
+$dark-bg: #333;
+$dark-primary: #666;
+$dark-color: #eee;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-rows: 50px calc(100vh - 80px) 30px;
+  grid-template-areas: "header" "workspace" "footer";
+  font-family: monospace;
+  font-size: 14px;
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+@import './style/header.scss';
+@import './style/workspace.scss';
+@import './style/footer.scss';
+
+

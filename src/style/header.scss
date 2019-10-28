@@ -1,0 +1,13 @@
+.header {
+  color: $dark-color;
+  background: $dark-bg;
+  border-bottom: 2px solid $border;
+  display: inline-grid;
+  grid-area: header;
+  padding: 0 10px;
+  
+  .header__title {
+    align-items: center;
+    display: flex;
+  }
+}
