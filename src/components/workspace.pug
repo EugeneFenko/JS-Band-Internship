@@ -13,21 +13,18 @@ main.workspace
     input.tool-bar__btn.js-open-modal(type="button", value="Create")
   
   .task-list
-    .task.task--done
-      h3.task__title Test task!
-      p.task__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, facilis impedit quas, repudiandae, incidunt quasi fuga consequuntur soluta eum hic qui omnis? Facilis, minima! Accusantium deserunt aut maxime fugit quas!
-      .task__menu
-        span.task__priority Low
-        input.task__option(type="button", value="...")
-    .task
-      h3.task__title Test task! Test task! 
-      p.task__text Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur, ipsa?
-      .task__menu
-        span.task__priority Low
-        input.task__option(type="button", value="...")
-    .task.task--done
-      h3.task__title Test task!
-      p.task__text Some task for test. Good Luck! Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae aut esse culpa eum cupiditate provident facere ab consequatur voluptates blanditiis ad quaerat, explicabo assumenda atque sit cum magni. Maxime officiis accusamus consectetur minima ad, at quaerat eligendi molestias et dicta ducimus maiores enim iusto impedit nulla? Quasi alias natus ea.
-      .task__menu
-        span.task__priority Low
-        input.task__option(type="button", value="...")
+
+  .modal-window
+    form.task-form
+      label.task-form__label(for="task-form-title") Title
+      input.task-form__title(type="text" name="task-form-title" maxlength="60" placeholder="Title")
+      label.task-form__label(for="task-form-text") Description
+      textarea.task-form__text(name="task-form-text", cols="30", rows="10" maxlength="300" placeholder="Description")
+      label.task-form__label(for="task-form-priority") Priority
+      select.task-form__priority(name="task-form-priority") Priority
+        option(value="low") low
+        option(value="normal") normal
+        option(value="high") high
+      .task-form__btn
+        input.task-form__btn-cancel.js-close-modal(type="button", value="Cancel")
+        input.task-form__btn-save.js-save-modal(type="submit", value="Save")

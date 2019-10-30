@@ -8,9 +8,11 @@ $dark-color: #eee;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline: 0;
 }
 
 body {
+  position: relative;
   display: grid;
   grid-template-rows: 50px calc(100vh - 80px) 30px;
   grid-template-areas: "header" "workspace" "footer";
@@ -22,6 +24,7 @@ body {
 }
 
 @import './style/header.scss';
+@import './style/modal.scss';
 @import './style/workspace.scss';
 @import './style/footer.scss';
 

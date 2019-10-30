@@ -1,0 +1,41 @@
+.modal-window {
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: #000000dd;
+  z-index: 100;
+
+  .task-form {
+    padding: 15px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    background: white;
+
+    input,
+    select,
+    .task-form__text {
+      font-size: 0.8rem;
+      padding: 6px;  
+    }
+
+    .task-form__label {
+      font-size: 1rem;
+      padding: 5px 0;
+    }
+
+    .task-form__btn {
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0 0;
+
+      input {
+        font-size: 1rem;
+        padding: 5px;
+      }
+    }
+  }
+}
