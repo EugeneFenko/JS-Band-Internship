@@ -9,5 +9,9 @@
   .header__title {
     align-items: center;
     display: flex;
+    user-select: none;
+    i {
+      padding: 0 10px;
+    }
   }
 }
