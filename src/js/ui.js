@@ -1,5 +1,7 @@
 /* eslint-disable no-param-reassign */
 import Storage from './storage';
+import Task from './task';
+
 // UI Class
 export default class UI {
   static displayTasks() {
@@ -11,6 +13,8 @@ export default class UI {
   static taskSearch(input) {
     const tasks = Storage.getTask();
     UI.clearList();
+    document.querySelector('.tool-bar__priority').value = 'all';
+    document.querySelector('.tool-bar__state').value = 'all';
     tasks.forEach((task, id) => {
       if (input === task.title) { UI.addTaskToList(task, id); }
       if (input === '') { UI.addTaskToList(task, id); }
@@ -22,6 +26,7 @@ export default class UI {
     const tasks = Storage.getTask();
     const done = (el.value === 'done');
     UI.clearList();
+    document.querySelector('.tool-bar__priority').value = 'all';
     tasks.forEach((task, id) => {
       if (done === task.done && el.value !== 'all') { UI.addTaskToList(task, id); }
       if (el.value === 'all') { UI.addTaskToList(task, id); }
@@ -32,12 +37,33 @@ export default class UI {
   static priorityFilter(el) {
     const tasks = Storage.getTask();
     UI.clearList();
+    document.querySelector('.tool-bar__state').value = 'all';
     tasks.forEach((task, id) => {
       if (el.value === task.priority && el.value !== 'all') { UI.addTaskToList(task, id); }
       if (el.value === 'all') { UI.addTaskToList(task, id); }
     });
   }
 
+  // Create task form
+  static createTask(el) {
+    el.preventDefault();
+    // Get form val
+    const title = document.querySelector('.task-form__title').value;
+    const text = document.querySelector('.task-form__text').value;
+    const priority = document.querySelector('.task-form__priority').value;
+    const done = false;
+    // Init task
+    const task = new Task(title, text, priority, done);
+    // Add task to LocalStorage
+    Storage.addTask(task);
+    // Add task to UI
+    if (title !== '' || text !== '') { UI.addTaskToList(task); }
+    // Clear form
+    UI.clerForm();
+    document.querySelector('.modal-window').style.display = 'none';
+  }
+
+  // Add task to DOM
   static addTaskToList(task, id) {
     const taskList = document.querySelector('.task-list');
     const newTask = document.createElement('div');

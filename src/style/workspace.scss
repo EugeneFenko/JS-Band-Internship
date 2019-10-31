@@ -5,19 +5,6 @@
   grid-template-rows: 60px auto;
   position: relative;
 
-  .tool-bar {
-    display: flex;
-    justify-content: center;
-    margin: 10px 2px;
-  
-    input, 
-    select {
-      margin: 0 10px;
-      padding: 5px;
-      width: 100%;
-    }
-  }
-
   .task-list {
     background: #aaa;
     display: grid;
@@ -83,10 +70,10 @@
           .task__option-list {
             display: none;
             position: absolute;
-            top: 30px;
-            right: 0;
+            top: -37px;
+            right: 37px;
             list-style: none;
-            background: #777;
+            background: #777777ee;
             color: black;
             cursor: pointer;
             user-select: none;
@@ -97,14 +84,13 @@
             &::before{
               position: absolute;
               content: '';
-              top: -10px;
-              right: 4px;
-
-              width: 0; 
-              height: 0; 
-              border-left: 10px solid transparent; 
-              border-right: 10px solid transparent;  
-              border-bottom: 10px solid #777; 
+              top: 38px;
+              right: -10px;
+              width: 0;
+              height: 0;
+              border-top: 10px solid transparent;
+              border-left: 10px solid #777777ee;
+              border-bottom: 10px solid transparent;
             }
 
             .task__option-item {
@@ -135,6 +121,73 @@
         right: -5px;
         border-radius: 50%;
       }
+    }
+  }
+
+  @media(min-width: 0px){
+    .tool-bar {
+      display: grid;
+      margin: 0;
+      grid-gap: 0;
+      grid-template-areas: 
+      "search search create"
+      "done prior create";
+      
+      .tool-bar__search {
+        grid-area: search;
+      }
+  
+      .tool-bar__state {
+        grid-area: done;
+      }
+  
+      .tool-bar__priority {
+        grid-area: prior;
+      }
+  
+      .tool-bar__btn {
+        grid-area: create;
+      }
+  
+      input, 
+      select {
+        padding: 5px;
+        width: 100%;
+      }
+    }
+
+    .task-list {
+      grid-template-columns: 1fr;
+    }
+
+    .task {
+      margin: 0 8%;
+    }
+  }
+  
+  @media(min-width: 400px){
+    .tool-bar {
+      padding: 10px;
+      grid-gap: 10px;
+      grid-template-areas: "search done prior create";
+    }
+    .task-list {
+      grid-template-columns: 1fr 1fr;
+    }
+    .task {
+      margin: 0;
+    }
+  }
+  
+  @media(min-width: 600px){
+    .task-list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media(min-width: 800px){
+    .task-list {
+      grid-template-columns: repeat(5, 1fr);
     }
   }
 
