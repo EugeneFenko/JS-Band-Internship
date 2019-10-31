@@ -1,7 +1,7 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { publish } from 'gh-pages';
+/* eslint-disable import/no-extraneous-dependencies */
+const gh = require('gh-pages');
 
-publish('dist', {
+gh.publish('dist', {
   branch: 'deploy',
   repo: 'git@github.com:EugeneFenko/JS-Band-Internship.git',
 }, (err) => {
