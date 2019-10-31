@@ -6,8 +6,8 @@ import Storage from './storage';
 document.addEventListener('DOMcontentLoaded', UI.displayTasks());
 
 // Event: Add a Task
-document.querySelector('.task-form').addEventListener('submit', (e) => {
-  e.preventDefault();
+document.querySelector('.task-form').addEventListener('submit', (el) => {
+  el.preventDefault();
 
   // Get form val
   const title = document.querySelector('.task-form__title').value;

@@ -76,7 +76,38 @@ export default class UI {
   // Edit task
   static editTask(el) {
     if (el.classList.contains('js-task-edit')) {
-      el.parentElement.style.display = 'none';
+      const tasks = Storage.getTask();
+      const taskID = el.parentElement.parentElement.parentElement.parentElement.dataset.task;
+      const oldTask = {
+        title: tasks[taskID].title,
+        text: tasks[taskID].text,
+        priority: tasks[taskID].priority,
+      };
+      console.log(oldTask);
+
+      const title = document.querySelector('.task-form__title');
+      const text = document.querySelector('.task-form__text');
+      const priority = document.querySelector('.task-form__priority');
+
+      // Modal-form manipulation
+      document.querySelector('.modal-window').style.display = 'flex';
+      document.querySelector('.js-save-modal').style.display = 'block';
+      document.querySelector('.js-create-modal').style.display = 'none';
+
+      // Get field value
+      title.value = oldTask.title;
+      text.value = oldTask.text;
+      priority.value = oldTask.priority;
+
+      document.querySelector('.js-save-modal').addEventListener('click', () => {
+        document.querySelector('.modal-window').style.display = 'none';
+        tasks[taskID].title = title.value;
+        tasks[taskID].text = text.value;
+        tasks[taskID].priority = priority.value;
+        localStorage['.tasks'] = JSON.stringify(tasks);
+        UI.clearList();
+        UI.displayTasks();
+      });
     }
   }
 
