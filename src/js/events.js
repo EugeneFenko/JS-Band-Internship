@@ -56,3 +56,13 @@ document.addEventListener('click', (e) => {
 document.querySelector('.tool-bar__search').addEventListener('keyup', (e) => {
   UI.taskSearch(e.target.value);
 });
+
+// Event: Done filter
+document.querySelector('.tool-bar__state').addEventListener('change', (e) => {
+  UI.doneFilter(e.target);
+});
+
+// Event: Priority filter
+document.querySelector('.tool-bar__priority').addEventListener('change', (e) => {
+  UI.priorityFilter(e.target);
+});

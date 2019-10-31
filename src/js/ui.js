@@ -17,6 +17,27 @@ export default class UI {
     });
   }
 
+  // Filter done
+  static doneFilter(el) {
+    const tasks = Storage.getTask();
+    const done = (el.value === 'done');
+    UI.clearList();
+    tasks.forEach((task, id) => {
+      if (done === task.done && el.value !== 'all') { UI.addTaskToList(task, id); }
+      if (el.value === 'all') { UI.addTaskToList(task, id); }
+    });
+  }
+
+  // Filter prority
+  static priorityFilter(el) {
+    const tasks = Storage.getTask();
+    UI.clearList();
+    tasks.forEach((task, id) => {
+      if (el.value === task.priority && el.value !== 'all') { UI.addTaskToList(task, id); }
+      if (el.value === 'all') { UI.addTaskToList(task, id); }
+    });
+  }
+
   static addTaskToList(task, id) {
     const taskList = document.querySelector('.task-list');
     const newTask = document.createElement('div');
