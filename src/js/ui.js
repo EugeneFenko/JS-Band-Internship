@@ -86,7 +86,7 @@ export default class UI {
       <div class="task__menu">
         <span class="task__priority task__priority--${task.priority}">${task.priority}</span>
         <div class="task__option">
-          <i class="fas fa-cog task__option-btn"></i>
+          <i class="fas fa-ellipsis-v task__option-btn"></i>
           <ul class="task__option-list">
               <li class="task__option-item js-task-done">
                 <i class="fas fa-check-circle"></i> done
