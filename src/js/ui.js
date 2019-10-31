@@ -11,15 +11,9 @@ export default class UI {
   static taskSearch(input) {
     const tasks = Storage.getTask();
     UI.clearList();
-    tasks.filter((task) => {
-      if (task.title === input) {
-        UI.addTaskToList(task);
-      }
-      if (input === '') {
-        UI.clearList();
-        UI.displayTasks();
-      }
-      return null;
+    tasks.forEach((task, id) => {
+      if (input === task.title) { UI.addTaskToList(task, id); }
+      if (input === '') { UI.addTaskToList(task, id); }
     });
   }
 
