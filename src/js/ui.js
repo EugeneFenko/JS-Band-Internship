@@ -86,11 +86,17 @@ export default class UI {
       <div class="task__menu">
         <span class="task__priority task__priority--${task.priority}">${task.priority}</span>
         <div class="task__option">
-          <input class="task__option-btn" type="button" value="..." />
+          <i class="fas fa-cog task__option-btn"></i>
           <ul class="task__option-list">
-              <li class="task__option-item js-task-done">done</li>
-              <li class="task__option-item js-task-edit">edit</li>
-              <li class="task__option-item js-task-delete">delete</li>
+              <li class="task__option-item js-task-done">
+                <i class="fas fa-check-circle"></i> done
+              </li>
+              <li class="task__option-item js-task-edit">
+              <i class="fas fa-pencil-alt"></i> edit
+              </li>
+              <li class="task__option-item js-task-delete">
+              <i class="fas fa-trash-alt"></i> delete
+              </li>
           </ul>
         </div>
       </div>

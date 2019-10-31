@@ -11,6 +11,15 @@ $dark-color: #eee;
   outline: 0;
 }
 
+a, 
+a:active, 
+a:hover, 
+a:visited { 
+  color: white;
+  text-decoration: none;
+  cursor: pointer; 
+}
+
 body {
   position: relative;
   display: grid;

@@ -34,12 +34,14 @@
       }
 
       .task__menu {
-        padding: 5px;
+        padding: 5px 0 0;
         display: flex;
         justify-content: space-between;
+        align-items: center;
 
         .task__priority {
           padding: 4px;
+          font-size: 0.6rem;
         }
 
         .task__priority--low {
@@ -70,21 +72,22 @@
           .task__option-list {
             display: none;
             position: absolute;
-            top: -37px;
-            right: 37px;
+            top: -52px;
+            right: 32px;
             list-style: none;
             background: #777777ee;
             color: black;
             cursor: pointer;
             user-select: none;
-            width: 80px;
-            text-align: center;
+            width: 85px;
+            text-align: left;
             z-index: 1;
+            border-radius: 6px;
             
-            &::before{
+            &::before {
               position: absolute;
               content: '';
-              top: 38px;
+              top: 50px;
               right: -10px;
               width: 0;
               height: 0;
@@ -98,7 +101,7 @@
             }
   
             .task__option-item:hover {
-              background: #eee;
+              font-weight: bold;
             }
           }
 
@@ -113,8 +116,9 @@
       &::before {
         content: '✓';
         text-align: center;
-        background: darkgreen;
-        font-size: 1.2rem;
+        background: white;
+        color: black;
+        font-size: 1rem;
         padding: 3px 6px;
         position: absolute;
         top: -5px;
