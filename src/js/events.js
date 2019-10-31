@@ -66,3 +66,8 @@ document.querySelector('.tool-bar__state').addEventListener('change', (e) => {
 document.querySelector('.tool-bar__priority').addEventListener('change', (e) => {
   UI.priorityFilter(e.target);
 });
+
+// Event: Edit
+document.addEventListener('click', (e) => {
+  UI.editTask(e.target);
+});

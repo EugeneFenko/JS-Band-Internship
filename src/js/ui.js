@@ -63,7 +63,7 @@ export default class UI {
           <input class="task__option-btn" type="button" value="..." />
           <ul class="task__option-list">
               <li class="task__option-item js-task-done">done</li>
-              <li class="task__option-item">edit</li>
+              <li class="task__option-item js-task-edit">edit</li>
               <li class="task__option-item js-task-delete">delete</li>
           </ul>
         </div>
@@ -71,6 +71,13 @@ export default class UI {
     `;
 
     taskList.appendChild(newTask);
+  }
+
+  // Edit task
+  static editTask(el) {
+    if (el.classList.contains('js-task-edit')) {
+      el.parentElement.style.display = 'none';
+    }
   }
 
   // Delete task
@@ -95,6 +102,12 @@ export default class UI {
   static showTaskMenu(el) {
     if (el.classList.contains('task__option-btn')) {
       el.nextElementSibling.style.display = (el.nextElementSibling.style.display === 'block') ? 'none' : 'block';
+    } else if (el.classList.contains('js-task-edit') || el.classList.contains('js-task-done')) {
+      el.parentElement.style.display = 'none';
+    } else {
+      document.querySelectorAll('.task__option-list').forEach((menu) => {
+        menu.style.display = 'none';
+      });
     }
   }
 
