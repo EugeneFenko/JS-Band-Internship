@@ -2,7 +2,6 @@
 const gh = require('gh-pages');
 
 gh.publish('dist', {
-  branch: 'deploy',
   repo: 'git@github.com:EugeneFenko/JS-Band-Internship.git',
 }, (err) => {
   if (err === undefined) {
