@@ -94,4 +94,4 @@ This project uses the following open source packages:
 
 > [fenko.ga](https://fenko.ga) &nbsp;&middot;&nbsp;
 > GitHub [@eugenefenko](https://github.com/eugenefenko) &nbsp;&middot;&nbsp;
-> LinkedIn [@eugenefenko](linkedin.com/in/efenko)
+> LinkedIn [@eugenefenko](https://linkedin.com/in/efenko)
