@@ -59,7 +59,7 @@ export default class UI {
     // Add task to UI
     if (title !== '' || text !== '') { UI.addTaskToList(task); }
     // Clear form
-    UI.clerForm();
+    UI.clearForm();
     document.querySelector('.modal-window').style.display = 'none';
   }
 
@@ -153,11 +153,14 @@ export default class UI {
   // Show modal window
   static showModalWindow(el) {
     if (el.classList.contains('js-open-modal')) {
+      UI.clearForm();
       document.querySelector('.modal-window').style.display = 'flex';
+      document.querySelector('.js-create-modal').style.display = 'block';
+      document.querySelector('.js-save-modal').style.display = 'none';
     }
     if (el.classList.contains('js-close-modal') || el.classList.contains('modal-window')) {
       document.querySelector('.modal-window').style.display = 'none';
-      UI.clerForm();
+      UI.clearForm();
     }
   }
 
@@ -175,7 +178,7 @@ export default class UI {
   }
 
   // Form clear
-  static clerForm() {
+  static clearForm() {
     document.querySelector('.task-form__title').value = '';
     document.querySelector('.task-form__text').value = '';
     document.querySelector('.task-form__priority').value = 'low';

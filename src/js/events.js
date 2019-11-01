@@ -4,7 +4,7 @@ import Storage from './storage';
 // Event: Display Tasks
 document.addEventListener('DOMcontentLoaded', UI.displayTasks());
 
-// Event: Add a Task
+// Event: Form press Create btn
 document.querySelector('.task-form').addEventListener('submit', (el) => {
   UI.createTask(el);
 });
