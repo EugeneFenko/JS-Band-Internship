@@ -6,10 +6,9 @@
   "author": "Eugene Fenko",
   "license": "ISC",
   "scripts": {
-    "clean": "rm -rf dist/",
     "start": "parcel src/index.pug",
-    "build": "parcel build src/index.pug --public-url ./",
-    "deploy": "node deploy.github.js"
+    "build": "rm -rf dist/ && parcel build src/index.pug --public-url ./",
+    "deploy": "rm -rf dist/ && parcel build src/index.pug --public-url ./ && node deploy.github.js"
   },
   "dependencies": {},
   "devDependencies": {
