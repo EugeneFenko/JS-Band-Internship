@@ -16,8 +16,7 @@ export default class UI {
     document.querySelector('.tool-bar__priority').value = 'all';
     document.querySelector('.tool-bar__state').value = 'all';
     tasks.forEach((task, id) => {
-      if (input === task.title) { UI.addTaskToList(task, id); }
-      if (input === '') { UI.addTaskToList(task, id); }
+      if (task.title.includes(input)) { UI.addTaskToList(task, id); }
     });
   }
 
