@@ -50,3 +50,9 @@ document.querySelector('.tool-bar__priority').addEventListener('change', (e) => 
 document.addEventListener('click', (e) => {
   UI.editTask(e.target);
 });
+
+// Event: Switch theme
+document.querySelector('.theme-switch input[type="checkbox"]').addEventListener('change', (e) => UI.themeSwitch(e), false);
+
+// Event: Current theme
+document.addEventListener('DOMcontentLoaded', UI.currentTheme());

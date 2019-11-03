@@ -195,4 +195,28 @@ export default class UI {
   static clearList() {
     document.querySelector('.task-list').innerHTML = '';
   }
+
+  // Theme switch
+  static themeSwitch(e) {
+    if (e.target.checked) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      console.log('Dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      console.log('Light');
+      localStorage.setItem('theme', 'light');
+    }
+  }
+
+  // Current theme
+  static currentTheme() {
+    const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+    if (currentTheme) {
+      document.documentElement.setAttribute('data-theme', currentTheme);
+      if (currentTheme === 'dark') {
+        document.querySelector('.theme-switch input[type="checkbox"]').checked = true;
+      }
+    }
+  }
 }

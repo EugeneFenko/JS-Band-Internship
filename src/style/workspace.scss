@@ -1,12 +1,12 @@
 .workspace {
-  background: $dark-primary;
+  background: var(--primary-color);
   display: grid;
   grid-area: workspace;
   grid-template-rows: 60px auto;
   position: relative;
 
   .task-list {
-    background: #aaa;
+    background: var(--secondary-color);
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-auto-rows: max-content;
@@ -16,13 +16,14 @@
     padding: 10px;
   
     .task {
-      background: $dark-bg;
+      background: var(--bg-color);
       border-radius: 6px;
-      color: $dark-color;
+      color: var(--font-color);
       display: flex;
       flex-direction: column;
       padding: 10px;
       word-break: break-word;
+      box-shadow: 0px 1px 5px 1px grey;
 
       .task__title {
         padding: 5px 0;
@@ -45,18 +46,18 @@
         }
 
         .task__priority--low {
-          color: lightblue;
-          border: 1px dashed lightblue;
+          color: #2196F3;
+          border: 1px dashed #2196F3;
         }
         
         .task__priority--normal {
-          color: yellow;
-          border: 1px dashed yellow;
+          color: #4CAF50;
+          border: 1px dashed #4CAF50;
         }
         
         .task__priority--high {
-          color: orangered;
-          border: 1px dashed orangered;
+          color: #FF5722;
+          border: 1px dashed #FF5722;
         }
 
         .task__option {
@@ -64,7 +65,7 @@
 
           .task__option-btn {
             background: transparent;
-            color: $dark-color;
+            color: var(--font-color);
             font-size: 1rem;
             padding: 0 5px;
             cursor: pointer;
@@ -76,8 +77,8 @@
             top: -52px;
             right: 20px;
             list-style: none;
-            background: #777777ee;
-            color: black;
+            background: var(--option-bg);
+            color: var(--font-color);
             cursor: pointer;
             user-select: none;
             width: 85px;
@@ -93,7 +94,7 @@
               width: 0;
               height: 0;
               border-top: 10px solid transparent;
-              border-left: 10px solid #777777ee;
+              border-left: 10px solid var(--option-bg);
               border-bottom: 10px solid transparent;
             }
 
@@ -113,12 +114,12 @@
 
     .task--done {
       position: relative;
-      background: #555;
+      background: var(--done);
       &::before {
         content: '✓';
         text-align: center;
-        background: white;
-        color: black;
+        background: var(--done-mark-bg);
+        color: var(--done-mark-color);
         font-size: 1rem;
         padding: 3px 6px;
         position: absolute;

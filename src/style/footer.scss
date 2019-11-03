@@ -1,7 +1,7 @@
 .footer {
-  color: $dark-color;
-  background: $dark-bg;
-  border-top: 2px solid $border;
+  color: var(--font-color);
+  background: var(--bg-color);
+  border-top: 2px solid var(--bg-color);
   display: inline-grid;
   grid-area: footer;
   padding: 0 10px;
